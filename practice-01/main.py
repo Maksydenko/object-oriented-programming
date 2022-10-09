@@ -53,7 +53,7 @@ class Ticket:
 
 
         days_difference = (datetime.strptime(self.event_date,
-                          '%d.%m.%Y').date() - date.today()).days
+                          "%d.%m.%Y").date() - date.today()).days
 
         if days_difference < 0:
             return -1
