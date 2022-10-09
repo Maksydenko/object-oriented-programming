@@ -48,7 +48,7 @@ class Ticket:
         self.__ticket_price = 10
 
 
-    def check_price(self):
+    def __check_price(self):
         from datetime import datetime, date
 
 
@@ -73,6 +73,6 @@ class Ticket:
     def __str__(self):
         if self.age < 0:
             return "Wrong age!"
-        if self.check_price() == -1:
+        if self.__check_price() == -1:
             return "Impossible to buy a ticket! The event has already started"
         return f"Number of your ticket: {self.ticket_number}, price: {self.__ticket_price}$"
