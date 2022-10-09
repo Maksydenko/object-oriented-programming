@@ -23,7 +23,7 @@ designing. The Python programming language and PyCharm integrated development en
 
 1. Create a class that performs statistical processing of a text file - counting characters, words, sentences, etc. Determine the required attributes-data and attributes-methods in class for working with the text file.
    
-2. Write a program for selling tickets to IT-events. Each ticket has a unique number and a price. There are four types of tickets: regular ticket, advance ticket (purchased 60 or more days before the event), late ticket (purchased fewer than 10 days before the event) and student ticket.
+2. Write a program for selling tickets to IT-events. Each ticket has a unique number and a price. There are four types of tickets: regular ticket, advance ticket (purchased 60 or more days before the event), late ticket (purchased fewer than 10 days before the event) and student ticket.<br>
   Additional information:
     * advance ticket - discount 40% of the regular ticket price;
     * student ticket - discount 50% of the regular ticket price;
