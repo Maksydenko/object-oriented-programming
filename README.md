@@ -12,6 +12,26 @@ designing. The Python programming language and PyCharm integrated development en
 
 ---
 
+## **Lab 1**
+
+### **Main**
+
+**📅 Date:** 11.10.2022
+
+**📁 Project:** [link](practice-01/main.py)
+
+<details>
+<summary><b>📋 Specification:</b></summary>
+
+1. Create a rational class to perform arithmetic operations with rational numbers. Use the \__init__() default method for the initialization of attributes of the class - numerator and denominator. The rational number in memory should be stored in a shortened form, for example, a fraction of 2/4 should be stored as 1 in the numerator and 2 in the denominator. Provide the possibility of eliminating rational numbers in A/B format, where a is the numerator, b is the denominator and in floating coma format.
+
+    To demonstrate the Rational Class functionality, create a console application.
+
+2. Create Rectangle class. To initialize attributes-donated classes-the length and width of the rectangle-use the method \__init__() with the default arguments. Provide the possibility of determining the perimeter and the area of ​​the rectangle. Access to attributes should be controlled (the length and width of the rectangle should be limited to 100 cm). To demonstrate rectangle functionality, create a console application.
+</details>
+
+---
+
 ### **Practice 1**
 
 **📅 Date:** 08.10.2022
