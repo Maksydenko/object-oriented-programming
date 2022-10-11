@@ -36,6 +36,7 @@ class InfoTxt:
         return f"In file {self.count_lines()} lines, " \
                f"{self.count_words()} words, {self.count_symbols()} symbols"
 
+
 # Task 2
 
 class Ticket:
