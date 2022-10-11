@@ -38,11 +38,20 @@ class InfoTxt:
 class Ticket:
 
     def __init__(self, ticket_number, event_date, age):
+        if age < 0:
+            raise ValueError("Wrong age!")
+        if self.check_date(event_date) < 0:
+            raise ValueError("Impossible to buy a ticket! The event has already started")
         self.age = age
-        self.days_difference = self.check_date(event_date)
+        self.ticket_number = ticket_number
 
-        if self.age and self.days_difference >= 0:
-            self.ticket_number = ticket_number
+
+    @staticmethod
+    def check_date(event_date):
+        from datetime import datetime, date
+
+        return (datetime.strptime(event_date,
+                "%d.%m.%Y").date() - date.today()).days
 
 
     def __get_price(self):
@@ -59,17 +68,5 @@ class Ticket:
                 return ticket_price
 
 
-    @staticmethod
-    def check_date(event_date):
-        from datetime import datetime, date
-
-        return (datetime.strptime(event_date,
-                "%d.%m.%Y").date() - date.today()).days
-
-
     def __str__(self):
-        if self.age < 0:
-            raise ValueError("Wrong age!")
-        if self.days_difference < 0:
-            raise ValueError("Impossible to buy a ticket! The event has already started")
-        return f"Number of your ticket: {self.ticket_number}, price: {self.__get_price()} $"
+        return f"Number of your ticket: {self.ticket_number}, price: ${self.__get_price()}"
