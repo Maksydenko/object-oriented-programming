@@ -40,6 +40,8 @@ class Rectangle:
 
 
     def __init__(self, width=80, height=60):
+        if width or height <= 0:
+            raise ValueError("Side cannot be equal to or less than 0")
         self.width = Rectangle.limit_side(width)
         self.height = Rectangle.limit_side(height)
 
@@ -55,4 +57,5 @@ class Rectangle:
 
 
     def __str__(self):
-        return f"Perimeter: {self.get_perimeter()}; square: {self.get_square()}"
+        return f"Perimeter: {self.get_perimeter()};" \
+               f"square: {self.get_square()}"
