@@ -3,7 +3,6 @@
 class InfoTxt:
 
     def __init__(self, path_file):
-
         try:
             with open(path_file) as file:
                 self.__line_count = 0
@@ -42,7 +41,6 @@ class InfoTxt:
 class Ticket:
 
     def __init__(self, ticket_number, event_date, age):
-
         self.age = age
         self.days_difference = self.check_date(event_date)
 
@@ -51,7 +49,6 @@ class Ticket:
 
 
     def __get_price(self):
-
         ticket_price = 10
 
         if 15 <= self.age <= 23:
