@@ -1,6 +1,8 @@
 class Book:
 
     def __init__(self, book_value, pages_number):
+        if book_value or pages_number <= 0:
+            raise ValueError("Wrong value of book or number of pages!")
         self.book_value = book_value
         self.pages_number = pages_number
 
@@ -16,6 +18,4 @@ class Book:
 
 
     def __str__(self):
-        if self.book_value or self.pages_number < 0:
-            raise ValueError("Wrong value of book or number of pages!")
         return f"Value of book: ${self.__get_price()}"
