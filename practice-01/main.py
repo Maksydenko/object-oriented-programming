@@ -3,13 +3,12 @@
 class InfoTxt:
 
     def __init__(self, path_file):
-        self.path_file = path_file
-        self.__line_count = 0
-        self.__word_count = 0
-        self.__symbol_count = 0
 
         try:
-            with open(self.path_file) as file:
+            with open(path_file) as file:
+                self.__line_count = 0
+                self.__word_count = 0
+                self.__symbol_count = 0
                 self.__text_list = file.readlines()
                 file.seek(0)
                 self.__text = file.read()
@@ -42,37 +41,41 @@ class InfoTxt:
 class Ticket:
 
     def __init__(self, ticket_number, event_date, age):
-        self.ticket_number = ticket_number
-        self.event_date = event_date
+
         self.age = age
-        self.__ticket_price = 10
+        self.days_difference = self.check_date(event_date)
+
+        if self.age and self.days_difference >= 0:
+            self.ticket_number = ticket_number
 
 
-    def __check_price(self):
+    def __get_price(self):
+
+        ticket_price = 10
+
+        if 15 <= self.age <= 23:
+            return ticket_price * 0.5
+        else:
+            if self.days_difference >= 60:
+                return ticket_price * 0.6
+            if self.days_difference <= 10:
+                return ticket_price * 1.1
+            else:
+                return ticket_price
+
+
+    @staticmethod
+    def check_date(event_date):
         from datetime import datetime, date
 
 
-        days_difference = (datetime.strptime(self.event_date,
-                          "%d.%m.%Y").date() - date.today()).days
-
-        if days_difference < 0:
-            return -1
-        else:
-            if 15 <= self.age <= 23:
-                self.__ticket_price *= 0.5
-                return self.__ticket_price
-            else:
-                if days_difference >= 60:
-                    self.__ticket_price *= 0.6
-                    return self.__ticket_price
-                if days_difference <= 10:
-                    self.__ticket_price *= 1.1
-                    return self.__ticket_price
+        return (datetime.strptime(event_date,
+                "%d.%m.%Y").date() - date.today()).days
 
 
     def __str__(self):
         if self.age < 0:
-            return "Wrong age!"
-        if self.__check_price() == -1:
-            return "Impossible to buy a ticket! The event has already started"
-        return f"Number of your ticket: {self.ticket_number}, price: {self.__ticket_price}$"
+            raise ValueError("Wrong age!")
+        if self.days_difference < 0:
+            raise ValueError("Impossible to buy a ticket! The event has already started")
+        return f"Number of your ticket: {self.ticket_number}, price: {self.__get_price()}$"
