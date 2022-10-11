@@ -66,7 +66,6 @@ class Ticket:
     def check_date(event_date):
         from datetime import datetime, date
 
-
         return (datetime.strptime(event_date,
                 "%d.%m.%Y").date() - date.today()).days
 
