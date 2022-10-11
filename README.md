@@ -18,7 +18,7 @@ designing. The Python programming language and PyCharm integrated development en
 
 **📅 Date:** 11.10.2022
 
-**📁 Project:** [link](practice-01/main.py)
+**📁 Project:** [link](main-01/main.py)
 
 <details>
 <summary><b>📋 Specification:</b></summary>
@@ -28,6 +28,20 @@ designing. The Python programming language and PyCharm integrated development en
     To demonstrate the Rational Class functionality, create a console application.
 
 2. Create Rectangle class. To initialize attributes-donated classes-the length and width of the rectangle-use the method \__init__() with the default arguments. Provide the possibility of determining the perimeter and the area of ​​the rectangle. Access to attributes should be controlled (the length and width of the rectangle should be limited to 100 cm). To demonstrate rectangle functionality, create a console application.
+</details>
+
+### **Additional**
+
+**📅 Date:** 11.10.2022
+
+**📁 Project:** [link](additional-01/main.py)
+
+<details>
+<summary><b>📋 Specification:</b></summary>
+
+| Attributes 1 and 2             | Method_1 attributes processing     | Method_2 attributes processing                                                           |
+| ------------------------------ | ---------------------------------- | ---------------------------------------------------------------------------------------- |
+| Book price and number of pages | Increase the number of pages by 10 | Reduce the book price 2 times if its number of pages (after increasing) is more than 200 |
 </details>
 
 ---
