@@ -5,9 +5,6 @@ class InfoTxt:
     def __init__(self, path_file):
         try:
             with open(path_file) as file:
-                self.__line_count = 0
-                self.__word_count = 0
-                self.__symbol_count = 0
                 self.__text_list = file.readlines()
                 file.seek(0)
                 self.__text = file.read()
@@ -16,19 +13,19 @@ class InfoTxt:
 
 
     def count_lines(self):
-        self.__line_count = len(self.__text_list)
-        return self.__line_count
+        return len(self.__text_list)
 
 
     def count_words(self):
+        word_count = 0
+
         for line in self.__text_list:
-            self.__word_count += len(line.split())
-        return self.__word_count
+            word_count += len(line.split())
+        return word_count
 
 
     def count_symbols(self):
-        self.__symbol_count = len(self.__text.replace("\n", ""))
-        return self.__symbol_count
+        return len(self.__text.replace("\n", ""))
 
 
     def __str__(self):
@@ -75,4 +72,4 @@ class Ticket:
             raise ValueError("Wrong age!")
         if self.days_difference < 0:
             raise ValueError("Impossible to buy a ticket! The event has already started")
-        return f"Number of your ticket: {self.ticket_number}, price: {self.__get_price()}$"
+        return f"Number of your ticket: {self.ticket_number}, price: {self.__get_price()} $"
