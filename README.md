@@ -1,4 +1,4 @@
-# **Numerical methods**
+# **Object oriented programming**
 
 <img src="img/python.gif&ct=s" height="150" alt="Python">
 
