@@ -31,6 +31,7 @@ class Weather:
                 max_days.append(days[count_day])
         return max_days
 
+
     def __str__(self):
         for count_day in range(days):
             print(f"{self.check_pressure()[count_day][0]} temperature "
@@ -50,6 +51,7 @@ class Date:
         self.month = month
         self.year = year
 
+
     def change_format(self):
         number_date = "%d.%m.%Y"
         word_date = "%d %B %Y"
@@ -60,6 +62,7 @@ class Date:
         string_date = str(self.day_date) + " " + self.month + " " + str(self.year)
         date = datetime.strptime(string_date, word_date)
         return date.strftime(number_date)
+
 
     def __str__(self):
         return f"{self.change_format()}"
