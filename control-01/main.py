@@ -1,17 +1,20 @@
+from datetime import datetime
+
+
 # Task 1
 
 class Weather:
 
     def __init__(self, date, temperature, pressure, precipitation):
-        self.day = [date, temperature, pressure, precipitation]
-        Weather.__add_day(self.day)
+        if datetime.strptime(date, "%d.%m.%Y") and pressure > 0 \
+                and 0 <= precipitation <= 100:
+            self.day = [date, temperature, pressure, precipitation]
+            Weather.list_days.append(self.day)
+        else:
+            raise ValueError("Atmospheric pressure must be greater than "
+                "0 mmHg, and the probability of precipitation from 0 to 100%")
 
     list_days = []
-
-    @classmethod
-    def __add_day(cls, day):
-        return cls.list_days.append(day)
-
 
     def check_pressure(self):
         days = Weather.list_days
