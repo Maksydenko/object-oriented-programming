@@ -24,7 +24,7 @@ class Weather:
 
 
     def __str__(self):
-        return self.check_pressure()
+        return f"{self.check_pressure()}"
 
 
 # Task 2
