@@ -1,3 +1,5 @@
+# Task 1
+
 class Weather:
 
     def __init__(self, date, temperature, pressure, precipitation):
@@ -22,4 +24,18 @@ class Weather:
 
 
     def __str__(self):
-        return f"{self.check_pressure()}"
+        return self.check_pressure()
+
+
+# Task 2
+
+class Date:
+
+    def get_date(self):
+        from datetime import datetime, date
+
+        return date.today()
+
+
+    def write_date(self):
+        return self.get_date().strftime("%d %B %Y")
