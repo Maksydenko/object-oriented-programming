@@ -12,23 +12,23 @@ class Weather:
             Weather.list_days.append(self.day)
         else:
             raise ValueError("Atmospheric pressure must be greater than "
-                             "0 mmHg, and the probability of precipitation from 0 to 100%")
+                "0 mmHg, and the probability of precipitation from 0 to 100%")
 
     list_days = []
 
     def check_pressure(self):
         days = Weather.list_days
-        max_days = []
         max_pressure = 0
 
         for count_day in range(len(days)):
             if days[count_day][2] > max_pressure:
                 max_pressure = days[count_day][2]
 
+        max_days = []
+
         for count_day in range(len(days)):
             if days[count_day][2] == max_pressure:
                 max_days.append(days[count_day])
-        # print(max_days)
         return max_days
 
     def __str__(self):
@@ -38,7 +38,7 @@ class Weather:
                   f"degrees Celsius, atmospheric pressure "
                   f"{self.check_pressure()[count_day][2]} mmHg, chance of "
                   f"precipitation {self.check_pressure()[count_day][3]}%")
-        return "↑ Days with the highest barometric pressure ↑"
+        return "↑ days with the highest barometric pressure ↑"
 
 
 # Task 2
