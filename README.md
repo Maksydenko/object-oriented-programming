@@ -82,7 +82,7 @@ designing. The Python programming language and PyCharm integrated development en
 <details>
 <summary><b>📋 Specification:</b></summary>
 
-1. Develop a class with weather data: date, average temperature, atmospheric pressure, precipitation. Determine the designers, methods / properties of installation and reading of data field values. Determine the days with the highest pressure drop.
+1. Develop a class with weather data: date, average temperature, atmospheric pressure, precipitation. Determine the designers, methods/properties of installation and reading of data field values. Determine the days with the highest pressure drop.
 
 2. Create a date of date with fields in closed frequent: day (1-31), month (1-12), year (integer). The class has a designer, methods of setting a day, month and year, methods of obtaining values ​​of day, month and year, as well as two methods of output by templates: "February 12, 2020" and "12.02.2020". Methods for installing class fields should check the correctness of the set parameters.
 </details>
