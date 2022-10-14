@@ -6,25 +6,29 @@ class Weather:
         self.day = [date, temperature, pressure, precipitation]
         Weather.add_day(self.day)
 
-    days_list = []
+    list_days = []
 
     @classmethod
     def add_day(cls, day):
-        return cls.days_list.append(day)
+        return cls.list_days.append(day)
 
 
     def check_pressure(self):
+        days = Weather.list_days
         number_day = 0
         max_pressure = 0
-        for i in range(len(Weather.days_list)):
-            if Weather.days_list[i][2] > max_pressure:
-                max_pressure = Weather.days_list[i][2]
-                number_day = i
-        return Weather.days_list[number_day]
+        for count_day in range(len(days)):
+            if days[count_day][2] > max_pressure:
+                max_pressure = days[count_day][2]
+                number_day = count_day
+        return days[number_day]
 
 
     def __str__(self):
-        return f"{self.check_pressure()}"
+        return f"{self.check_pressure()[0]} temperature " \
+               f"{self.check_pressure()[1]} degrees Celsius, atmospheric " \
+               f"pressure {self.check_pressure()[2]} mmHg, " \
+               f"chance of precipitation {self.check_pressure()[3]}%"
 
 
 # Task 2
