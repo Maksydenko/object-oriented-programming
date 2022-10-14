@@ -4,12 +4,12 @@ class Weather:
 
     def __init__(self, date, temperature, pressure, precipitation):
         self.day = [date, temperature, pressure, precipitation]
-        Weather.add_day(self.day)
+        Weather.__add_day(self.day)
 
     list_days = []
 
     @classmethod
-    def add_day(cls, day):
+    def __add_day(cls, day):
         return cls.list_days.append(day)
 
 
@@ -17,7 +17,7 @@ class Weather:
         days = Weather.list_days
         number_day = 0
         max_pressure = 0
-        
+
         for count_day in range(len(days)):
             if days[count_day][2] > max_pressure:
                 max_pressure = days[count_day][2]
