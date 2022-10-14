@@ -32,7 +32,7 @@ class Rational:
 class Rectangle:
 
     def __init__(self, width=80, height=60):
-        if width or height <= 0:
+        if width <= 0 or height <= 0:
             raise ValueError("Side cannot be equal to or less than 0")
         self.width = Rectangle.limit_side(width)
         self.height = Rectangle.limit_side(height)
