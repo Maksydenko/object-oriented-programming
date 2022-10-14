@@ -48,7 +48,8 @@ class Date:
         if self.month == 0 or self.year == 0:
             date = datetime.strptime(self.day, "%d.%m.%Y")
             return date.strftime("%d %B %Y")
-        date = datetime.strptime(str(self.day) + " " + self.month + " " + str(self.year), "%d %B %Y")
+        date = datetime.strptime(str(self.day) + " " + self.month
+                                 + " " + str(self.year), "%d %B %Y")
         return date.strftime("%d.%m.%Y")
 
 
