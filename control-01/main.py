@@ -12,27 +12,33 @@ class Weather:
             Weather.list_days.append(self.day)
         else:
             raise ValueError("Atmospheric pressure must be greater than "
-                "0 mmHg, and the probability of precipitation from 0 to 100%")
+                             "0 mmHg, and the probability of precipitation from 0 to 100%")
 
     list_days = []
 
     def check_pressure(self):
         days = Weather.list_days
-        number_day = 0
+        max_days = []
         max_pressure = 0
 
         for count_day in range(len(days)):
             if days[count_day][2] > max_pressure:
                 max_pressure = days[count_day][2]
-                number_day = count_day
-        return days[number_day]
 
+        for count_day in range(len(days)):
+            if days[count_day][2] == max_pressure:
+                max_days.append(days[count_day])
+        # print(max_days)
+        return max_days
 
     def __str__(self):
-        return f"{self.check_pressure()[0]} temperature " \
-               f"{self.check_pressure()[1]} degrees Celsius, " \
-               f"atmospheric pressure {self.check_pressure()[2]} mmHg, " \
-               f"chance of precipitation {self.check_pressure()[3]}%"
+        for count_day in range(days):
+            print(f"{self.check_pressure()[count_day][0]} temperature "
+                  f"{self.check_pressure()[count_day][1]} "
+                  f"degrees Celsius, atmospheric pressure "
+                  f"{self.check_pressure()[count_day][2]} mmHg, chance of "
+                  f"precipitation {self.check_pressure()[count_day][3]}%")
+        return "↑ Days with the highest barometric pressure ↑"
 
 
 # Task 2
@@ -44,7 +50,6 @@ class Date:
         self.month = month
         self.year = year
 
-
     def change_format(self):
         number_date = "%d.%m.%Y"
         word_date = "%d %B %Y"
@@ -55,7 +60,6 @@ class Date:
         string_date = str(self.day_date) + " " + self.month + " " + str(self.year)
         date = datetime.strptime(string_date, word_date)
         return date.strftime(number_date)
-
 
     def __str__(self):
         return f"{self.change_format()}"
