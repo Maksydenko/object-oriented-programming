@@ -2,7 +2,6 @@ from datetime import datetime
 
 
 # Task 1
-
 class Weather:
 
     def __init__(self, date, temperature, pressure, precipitation):
@@ -43,7 +42,6 @@ class Weather:
 
 
 # Task 2
-
 class Date:
 
     def __init__(self, month_date, day=0, year=0):

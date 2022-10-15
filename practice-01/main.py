@@ -1,5 +1,4 @@
 # Task 1
-
 class InfoTxt:
 
     def __init__(self, path_file):
@@ -34,12 +33,12 @@ class InfoTxt:
 
 
 # Task 2
-
 class Ticket:
 
     def __init__(self, ticket_number, event_date, age):
         if age < 0:
             raise ValueError("Wrong age!")
+
         if self.check_date(event_date) < 0:
             raise ValueError("Impossible to buy a ticket! The event has already started")
         self.age = age
@@ -62,11 +61,12 @@ class Ticket:
         else:
             if self.days_difference >= 60:
                 return ticket_price * 0.6
+
             if self.days_difference <= 10:
                 return ticket_price * 1.1
-            else:
-                return ticket_price
+            return ticket_price
 
 
     def __str__(self):
-        return f"Number of your ticket: {self.ticket_number}, price: ${self.__get_price()}"
+        return f"Number of your ticket: {self.ticket_number}, " \
+               f"price: ${self.__get_price()}"

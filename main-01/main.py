@@ -1,5 +1,4 @@
 # Task 1
-
 class Rational:
 
     def __init__(self, numberator=4, denominator=10):
@@ -28,7 +27,6 @@ class Rational:
 
 
 # Task 2
-
 class Rectangle:
 
     def __init__(self, width=80, height=60):
@@ -37,12 +35,12 @@ class Rectangle:
         self.width = Rectangle.limit_side(width)
         self.height = Rectangle.limit_side(height)
 
-    max_size = 100
+    MAX_SIZE = 100
 
     @classmethod
     def limit_side(cls, side):
-        if side > cls.max_size:
-            return cls.max_size
+        if side > cls.MAX_SIZE:
+            return cls.MAX_SIZE
         return side
 
 
