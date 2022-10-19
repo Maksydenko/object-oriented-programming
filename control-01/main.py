@@ -57,8 +57,8 @@ class Date:
         if self.day == 0 and self.year == 0:
             date = datetime.strptime(self.month_date, number_date)
             return date.strftime(word_date)
-        string_date = self.month_date + " " + str(self.day) \
-                      + ", " + str(self.year)
+        string_date = self.month_date + " " + str(self.day) + ", " \
+                      + str(self.year)
         date = datetime.strptime(string_date, word_date)
         return date.strftime(number_date)
 
