@@ -32,7 +32,7 @@ class Weather:
 
 
     def __str__(self):
-        for count_day in range(days):
+        for count_day in range(len(self.check_pressure())):
             print(f"{self.check_pressure()[count_day][0]} temperature "
                   f"{self.check_pressure()[count_day][1]} "
                   f"degrees Celsius, atmospheric pressure "
