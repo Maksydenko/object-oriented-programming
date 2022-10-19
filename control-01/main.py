@@ -7,7 +7,8 @@ class Weather:
     def __init__(self, date, temperature, pressure, precipitation):
         if datetime.strptime(date, "%d.%m.%Y") and pressure > 0 \
                 and 0 <= precipitation <= 100:
-            self.day = [date, temperature, pressure, precipitation]
+            self.day = {"date": date, "temperature": temperature,
+                        "pressure": pressure, "precipitation": precipitation}
             Weather.list_days.append(self.day)
         else:
             raise ValueError("Atmospheric pressure must be greater than "
@@ -17,27 +18,30 @@ class Weather:
 
     def check_pressure(self):
         days = Weather.list_days
+        pressure = "pressure"
         max_pressure = 0
 
-        for count_day in range(len(days)):
-            if days[count_day][2] > max_pressure:
-                max_pressure = days[count_day][2]
+        for count_days in range(len(days)):
+            if days[count_days][pressure] > max_pressure:
+                max_pressure = days[count_days][pressure]
 
         max_days = []
 
-        for count_day in range(len(days)):
-            if days[count_day][2] == max_pressure:
-                max_days.append(days[count_day])
+        for count_days in range(len(days)):
+            if days[count_days][pressure] == max_pressure:
+                max_days.append(days[count_days])
         return max_days
 
 
     def __str__(self):
-        for count_day in range(len(self.check_pressure())):
-            print(f"{self.check_pressure()[count_day][0]} temperature "
-                  f"{self.check_pressure()[count_day][1]} "
-                  f"degrees Celsius, atmospheric pressure "
-                  f"{self.check_pressure()[count_day][2]} mmHg, chance of "
-                  f"precipitation {self.check_pressure()[count_day][3]}%")
+        max_days = self.check_pressure()
+
+        for count_days in range(len(max_days)):
+            print(f"{max_days[count_days]['date']} temperature "
+                  f"{max_days[count_days]['temperature']} degrees Celsius, "
+                  f"atmospheric pressure {max_days[count_days]['pressure']}"
+                  f" mmHg, chance of precipitation "
+                  f"{max_days[count_days]['precipitation']}%")
         return "↑ days with the highest barometric pressure ↑"
 
 
