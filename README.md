@@ -52,7 +52,7 @@ designing. The Python programming language and PyCharm integrated development en
 
 **📅 Date:** 20.10.2022
 
-**📁 Project:** [link](main-01/main.py)
+**📁 Project:** [link](main-02/main.py)
 
 <details>
 <summary><b>📋 Specification:</b></summary>
