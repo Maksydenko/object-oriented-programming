@@ -1,3 +1,8 @@
+from datetime import datetime, date
+from random import randint
+from json import dump, load, loads
+
+
 # Task 1
 
 # Appearance
@@ -73,11 +78,6 @@ class Kajit(BaseAppearance, HairColor):
 
 
 # Task 2
-
-from datetime import datetime, date
-from random import randint
-from json import dump, load, loads
-
 
 class BaseProject:
     def __init__(self, deadline):
