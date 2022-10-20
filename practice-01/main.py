@@ -36,12 +36,16 @@ class InfoTxt:
 class Ticket:
 
     def __init__(self, ticket_number, event_date, age):
-        if age < 0:
+        self.age = int(age
+
+        if self.age < 0:
             raise ValueError("Wrong age!")
 
-        if self.check_date(event_date) < 0:
-            raise ValueError("Impossible to buy a ticket! The event has already started")
-        self.age = age
+        self.days_difference = self.check_date(event_date)
+
+        if self.days_difference < 0:
+            raise ValueError("Impossible to buy a ticket! "
+                             "The event has already started")
         self.ticket_number = ticket_number
 
 
