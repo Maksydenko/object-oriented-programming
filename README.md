@@ -46,6 +46,32 @@ designing. The Python programming language and PyCharm integrated development en
 
 ---
 
+## **Lab 2**
+
+### **Main**
+
+**📅 Date:** 20.10.2022
+
+**📁 Project:** [link](main-01/main.py)
+
+<details>
+<summary><b>📋 Specification:</b></summary>
+
+1. RPG-game enables the player to choose the race of the hero: Argonianin, Bretonets, Altmer, Nord, Danmer, Kadjit. In addition to choosing a race, the user has the ability to adjust the appearance of the selected hero: gender, skin color, body weight, tattoos, hair color (if it exists). Write the program to display all the characteristics of the created hero.
+   
+2. Create a Python program to display the active status of the IT project. Each project has its own unique number, which is generated at the stage of the project. The company offers three types of project implementation: standard project, 10 days project and investors project. The project for 10 days has a mark of 60% of the total cost of the project, and the "project for investors" provides a 20% discount for the customer, if it is an investor of the company. Provided that the time is discussed, the company carries losses - 5% of the cost of the project for each overdue week.
+
+    The program must provide the user with the following functionality:
+
+    * display of projects by numbers;
+
+    * reflection of the type of project implementation and its cost at present;
+
+    * all project information should be stored without losing data when leaving the program.
+</details>
+
+---
+
 ### **Practice 1**
 
 **📅 Date:** 08.10.2022
