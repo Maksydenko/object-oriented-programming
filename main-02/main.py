@@ -131,6 +131,7 @@ class BaseProject:
         except:
             print("Project not found")
 
+
     # Price depending on overdue weeks
     @staticmethod
     def check_terms(deadline, price):
