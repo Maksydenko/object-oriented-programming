@@ -48,23 +48,29 @@ class Weather:
 # Task 2
 class Date:
 
-    def __init__(self, month_date, day=0, year=0):
-        self.month_date = month_date
-        self.day = day
-        self.year = year
+    def __init__(self, *args):
+        if len(args) == 1:
+            self.date = args[0]
+        elif len(args) == 3:
+            self.month = args[0]
+            self.day = args[1]
+            self.year = args[2]
+        else:
+            raise ValueError("You wrote too few or too many arguments")
 
 
     def change_format(self):
         number_date = "%d.%m.%Y"
         word_date = "%B %d, %Y"
 
-        if self.day == 0 and self.year == 0:
-            date = datetime.strptime(self.month_date, number_date)
+        try:
+            date = datetime.strptime(self.date, number_date)
             return date.strftime(word_date)
-        string_date = self.month_date + " " + str(self.day) + ", " \
-                      + str(self.year)
-        date = datetime.strptime(string_date, word_date)
-        return date.strftime(number_date)
+        except:
+            string_date = self.month + " " + str(self.day) + ", " \
+                          + str(self.year)
+            date = datetime.strptime(string_date, word_date)
+            return date.strftime(number_date)
 
 
     def __str__(self):
