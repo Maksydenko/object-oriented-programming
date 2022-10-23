@@ -1,6 +1,5 @@
 # Task 1
 class Rational:
-
     def __init__(self, numberator=4, denominator=10):
         numberator, denominator = self.reduce_fraction(numberator, denominator)
         self.numberator = numberator
@@ -28,7 +27,6 @@ class Rational:
 
 # Task 2
 class Rectangle:
-
     def __init__(self, width=80, height=60):
         if width <= 0 or height <= 0:
             raise ValueError("Side cannot be equal to or less than 0")

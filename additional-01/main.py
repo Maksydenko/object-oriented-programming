@@ -1,5 +1,4 @@
 class Book:
-
     def __init__(self, book_value, pages_number):
         if book_value <= 0 or pages_number <= 0:
             raise ValueError("Wrong value of book or number of pages!")

@@ -3,7 +3,6 @@ from datetime import datetime
 
 # Task 1
 class Weather:
-
     def __init__(self, date, temperature, pressure, precipitation):
         if datetime.strptime(date, "%d.%m.%Y") and pressure > 0 \
                 and 0 <= precipitation <= 100:
@@ -47,7 +46,6 @@ class Weather:
 
 # Task 2
 class Date:
-
     def __init__(self, *args):
         if len(args) == 1:
             self.date = args[0]

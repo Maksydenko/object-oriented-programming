@@ -1,6 +1,5 @@
 # Task 1
 class InfoTxt:
-
     def __init__(self, path_file):
         try:
             with open(path_file) as file:
@@ -34,7 +33,6 @@ class InfoTxt:
 
 # Task 2
 class Ticket:
-
     def __init__(self, ticket_number, event_date, age):
         self.age = int(age
 
