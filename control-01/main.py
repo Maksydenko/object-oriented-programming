@@ -10,8 +10,8 @@ class Weather:
                         "pressure": pressure, "precipitation": precipitation}
             Weather.list_days.append(self.day)
         else:
-            raise ValueError("Atmospheric pressure must be greater than "
-                "0 mmHg, and the probability of precipitation from 0 to 100%")
+            raise ValueError(
+                "Atmospheric pressure must be greater than 0 mmHg, and the probability of precipitation from 0 to 100%")
 
     list_days = []
 
@@ -30,7 +30,6 @@ class Weather:
             if days[count_days][pressure] == max_pressure:
                 max_days.append(days[count_days])
         return max_days
-
 
     def __str__(self):
         max_days = self.check_pressure()
@@ -56,7 +55,6 @@ class Date:
         else:
             raise ValueError("You wrote too few or too many arguments")
 
-
     def change_format(self):
         number_date = "%d.%m.%Y"
         word_date = "%B %d, %Y"
@@ -66,10 +64,9 @@ class Date:
             return date.strftime(word_date)
         except:
             string_date = self.month + " " + str(self.day) + ", " \
-                          + str(self.year)
+                + str(self.year)
             date = datetime.strptime(string_date, word_date)
             return date.strftime(number_date)
-
 
     def __str__(self):
         return f"{self.change_format()}"

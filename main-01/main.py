@@ -5,7 +5,6 @@ class Rational:
         self.numberator = numberator
         self.denominator = denominator
 
-
     @staticmethod
     def reduce_fraction(numberator, denomunator):
         from math import gcd
@@ -15,14 +14,11 @@ class Rational:
         denomunator //= gcd
         return numberator, denomunator
 
-
     def get_float(self):
         return self.numberator / self.denominator
 
-
     def __str__(self):
-        return f"{self.numberator}/{self.denominator};" \
-               f"float {self.get_float()}"
+        return f"{self.numberator}/{self.denominator}; float {self.get_float()}"
 
 
 # Task 2
@@ -41,17 +37,13 @@ class Rectangle:
             return cls.MAX_SIZE
         return side
 
-
     def get_perimeter(self):
         perimeter = (self.width + self.height) * 2
         return f"{perimeter} cm"
-
 
     def get_square(self):
         square = self.width * self.height
         return f"{square} cm²"
 
-
     def __str__(self):
-        return f"Perimeter: {self.get_perimeter()};" \
-               f"square: {self.get_square()}"
+        return f"Perimeter: {self.get_perimeter()}; square: {self.get_square()}"

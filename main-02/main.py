@@ -24,7 +24,6 @@ class BaseAppearance:
         except:
             self.hair_color = None
 
-
     def add_appearance(self):
         base_appearance = f"Race: {self.__class__.__name__}, " \
                           f"sex: {self.sex}, weight: {self.weight}, " \
@@ -39,7 +38,6 @@ class BaseAppearance:
 class HairColor:
     def __init__(self, hair_color):
         self.hair_color = hair_color
-
 
     def add_hair_color(self):
         return self.hair_color
@@ -97,8 +95,8 @@ class BaseProject:
         # Default price
         self.price = 1000
 
-
     # Price depending on the type of project
+
     def check_type(self):
         if self.__class__.__name__ == "TenDaysProject":
             self.price *= 1.6
@@ -107,8 +105,8 @@ class BaseProject:
             self.price *= 0.8
         return self.price
 
-
     # Generate JSON with project information
+
     def write_json(self):
         project_info = {
             "project type": self.__class__.__name__,
@@ -119,26 +117,25 @@ class BaseProject:
             dump(project_info, project_json)
             return "Project added"
 
-
     # Find a project by ID and find out the current price
+
     def find_project(self, id):
         try:
             with open(f"{id}.json") as project_json:
                 read_file = load(project_json)
                 print(f"Project type: {read_file['project type']}; "
-            f"current price: "
-            f"{self.check_terms(read_file['deadline'], read_file['price'])}")
+                      f"current price: "
+                      f"{self.check_terms(read_file['deadline'], read_file['price'])}")
         except:
             print("Project not found")
 
-
     # Price depending on overdue weeks
+
     @staticmethod
     def check_terms(deadline, price):
         # Days passed from the deadline to the release of the project
-        days_difference = (date.today() -
-                           datetime.strptime(deadline,
-                                             "%Y-%m-%d").date()).days
+        days_difference = (
+            date.today() - datetime.strptime(deadline, "%Y-%m-%d").date()).days
 
         # Overdue weeks
         weeks = days_difference // 7

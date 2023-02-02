@@ -9,10 +9,8 @@ class InfoTxt:
         except FileNotFoundError as fnfe:
             print(fnfe)
 
-
     def count_lines(self):
         return len(self.__text_list)
-
 
     def count_words(self):
         word_count = 0
@@ -21,20 +19,17 @@ class InfoTxt:
             word_count += len(line.split())
         return word_count
 
-
     def count_symbols(self):
         return len(self.__text.replace("\n", ""))
 
-
     def __str__(self):
-        return f"In file {self.count_lines()} lines, " \
-               f"{self.count_words()} words, {self.count_symbols()} symbols"
+        return f"In file {self.count_lines()} lines, {self.count_words()} words, {self.count_symbols()} symbols"
 
 
 # Task 2
 class Ticket:
     def __init__(self, ticket_number, event_date, age):
-        self.age = int(age
+        self.age = int(age)
 
         if self.age < 0:
             raise ValueError("Wrong age!")
@@ -42,10 +37,9 @@ class Ticket:
         self.days_difference = self.check_date(event_date)
 
         if self.days_difference < 0:
-            raise ValueError("Impossible to buy a ticket! "
-                             "The event has already started")
+            raise ValueError(
+                "Impossible to buy a ticket! The event has already started")
         self.ticket_number = ticket_number
-
 
     @staticmethod
     def check_date(event_date):
@@ -53,7 +47,6 @@ class Ticket:
 
         return (datetime.strptime(event_date,
                 "%d.%m.%Y").date() - date.today()).days
-
 
     def __get_price(self):
         ticket_price = 10
@@ -68,7 +61,5 @@ class Ticket:
                 return ticket_price * 1.1
             return ticket_price
 
-
     def __str__(self):
-        return f"Number of your ticket: {self.ticket_number}, " \
-               f"price: ${self.__get_price()}"
+        return f"Number of your ticket: {self.ticket_number}, price: ${self.__get_price()}"
