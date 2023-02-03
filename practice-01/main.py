@@ -23,7 +23,8 @@ class InfoTxt:
         return len(self.__text.replace("\n", ""))
 
     def __str__(self):
-        return f"In file {self.count_lines()} lines, {self.count_words()} words, {self.count_symbols()} symbols"
+        return f"In file {self.count_lines()} lines, " \
+            f"{self.count_words()} words, {self.count_symbols()} symbols"
 
 
 # Task 2
@@ -62,4 +63,5 @@ class Ticket:
             return ticket_price
 
     def __str__(self):
-        return f"Number of your ticket: {self.ticket_number}, price: ${self.__get_price()}"
+        return f"Number of your ticket: {self.ticket_number}, " \
+            f"price: ${self.__get_price()}"

@@ -11,7 +11,8 @@ class Weather:
             Weather.list_days.append(self.day)
         else:
             raise ValueError(
-                "Atmospheric pressure must be greater than 0 mmHg, and the probability of precipitation from 0 to 100%")
+                "Atmospheric pressure must be greater than 0 mmHg, \
+                  and the probability of precipitation from 0 to 100%")
 
     list_days = []
 

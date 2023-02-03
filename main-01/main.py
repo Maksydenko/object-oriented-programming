@@ -18,7 +18,8 @@ class Rational:
         return self.numberator / self.denominator
 
     def __str__(self):
-        return f"{self.numberator}/{self.denominator}; float {self.get_float()}"
+        return f"{self.numberator}/{self.denominator}; "\
+            f"float {self.get_float()}"
 
 
 # Task 2
@@ -46,4 +47,5 @@ class Rectangle:
         return f"{square} cm²"
 
     def __str__(self):
-        return f"Perimeter: {self.get_perimeter()}; square: {self.get_square()}"
+        return f"Perimeter: {self.get_perimeter()};" \
+            f"square: {self.get_square()}"
